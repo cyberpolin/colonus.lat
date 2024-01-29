@@ -16,7 +16,7 @@ export default function Home() {
             className="mr-8"
           />
         </a>
-        <a href="/app-release.aab">
+        <a href="/app-release.apk">
           <Image
             src="/android.svg"
             alt="Colonus.lat"
