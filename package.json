@@ -3,23 +3,32 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "ssl": "local-ssl-proxy --key local.colonus.lat-key.pem --cert local.colonus.lat.pem --source 3400 --target 3000",
+    "local": "next dev -p 3000",
+    "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^3.9.4",
+    "@material-tailwind/react": "^2.1.9",
+    "@mui/base": "^5.0.0-beta.36",
     "@types/node": "20.2.3",
-    "@types/react": "18.2.6",
-    "@types/react-dom": "18.2.4",
+    "@types/react": "^18.2.53",
+    "@types/react-dom": "^18.2.18",
+    "apollo-upload-client": "^17.0.0",
     "autoprefixer": "10.4.14",
     "eslint": "8.41.0",
-    "eslint-config-next": "13.4.3",
-    "next": "13.4.3",
+    "eslint-config-next": "^14.1.0",
+    "formik": "^2.4.5",
+    "graphql": "^16.8.1",
+    "next": "^14.1.0",
     "postcss": "8.4.23",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tailwindcss": "3.3.2",
-    "typescript": "5.0.4"
+    "typescript": "5.3.3",
+    "zod": "^3.22.4"
   }
 }

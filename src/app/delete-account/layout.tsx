@@ -1,11 +1,13 @@
+"use client"
+
 import { ApolloProvider } from "@apollo/client"
-import "./globals.css"
+import "../globals.css"
 import { Inter } from "next/font/google"
-import client from "../lib/apollo-client"
+import client from "../../lib/apollo-client"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata = {
+const metadata = {
   title: "Colonus - micro government system",
   description: "Micro goverment system",
 }
@@ -18,8 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* <ApolloProvider client={client}>{children}</ApolloProvider> */}
-        {children}
+        <ApolloProvider client={client}>{children}</ApolloProvider>
       </body>
     </html>
   )
