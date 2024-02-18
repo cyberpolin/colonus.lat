@@ -107,6 +107,7 @@ const FormComponent = ({
 const Goodbye = () => {
   return (
     <>
+      <Image src="/bye.svg" alt="Colonus.lat" width="220" height="67" />
       <h3>Iniciaste la eliminación de tu cuenta</h3>
       <p>Te hemos enviado un correo para confirmar tu desición.</p>
       <p>
@@ -126,7 +127,14 @@ export default function DeleteAccount() {
   })
 
   const { data, error, called, loading } = mutData
-  const success = called && !error && data?.deleteAccount?.success
+  const success = called && !error && data?.deleteAccount
+  console.log(">>>>>>", {
+    data,
+    error,
+    called,
+    loading,
+    success,
+  })
   return (
     <main className="flex justify-center content-center min-h-screen flex-col items-center justify-between p-24">
       <div className="">
