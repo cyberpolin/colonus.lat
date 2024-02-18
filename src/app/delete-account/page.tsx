@@ -14,18 +14,15 @@ const loginSchema = z.object({
     .regex(/^[0-9]{4}$/, "PIN debe ser de 4 digitos"),
 })
 
+type LoginSchema = z.infer<typeof loginSchema>
+type DeleteAccountProps = { variables: LoginSchema }
+
 const FormComponent = ({
   deleteAccount,
   error,
   loading,
 }: {
-  deleteAccount: ({
-    email,
-    password,
-  }: {
-    email: string
-    password: string
-  }) => void
+  deleteAccount: (variables: DeleteAccountProps) => void
   error: any
   loading: boolean
 }) => {
